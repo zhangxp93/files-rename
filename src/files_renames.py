@@ -18,8 +18,8 @@ import queue
 class OptimizedFileRenamer:
     def __init__(self, root):
         self.root = root
-        self.root.title("文件重命名工具 v1.0")
-        self.root.geometry("700x650")
+        self.root.title("文件重命名工具 v2.1")
+        self.root.geometry("700x800")
         self.root.resizable(True, True)
         
         # 设置窗口图标（使用默认）
@@ -49,7 +49,7 @@ class OptimizedFileRenamer:
         """窗口居中显示"""
         self.root.update_idletasks()
         width = 700
-        height = 650
+        height = 800
         x = (self.root.winfo_screenwidth() // 2) - (width // 2)
         y = (self.root.winfo_screenheight() // 2) - (height // 2)
         self.root.geometry(f'{width}x{height}+{x}+{y}')
