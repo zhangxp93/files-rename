@@ -29,26 +29,27 @@
 
 ### 方式一：直接运行Python脚本
 ```bash
-python files_renames.py
+python src/files_renames.py
 ```
 
 ### 方式二：使用打包后的可执行文件
-1. 下载 `文件重命名工具_v2.0.exe`
+1. 下载 `dist/文件重命名工具_v2.0.exe`
 2. 双击运行，无需安装Python环境
 3. 适用于所有Windows系统（Win7/8/10/11）
 
 ### 自己打包可执行文件
 如果您想自己打包程序：
 ```bash
-# 运行一键打包脚本
+# 方式1：使用根目录快速打包脚本
+build.bat
+
+# 方式2：进入build目录使用专用脚本
+cd build
 一键打包.bat
 
-# 或者使用高级打包脚本
-高级打包工具.bat
-
-# 或者手动打包
+# 方式3：手动打包
 pip install pyinstaller
-pyinstaller --onefile --windowed --name="文件重命名工具_v2.0" files_renames.py
+pyinstaller --onefile --windowed --name="文件重命名工具_v2.0" --distpath="dist" "src/files_renames.py"
 ```
 
 ### 使用步骤
@@ -95,17 +96,24 @@ pyinstaller --onefile --windowed --name="文件重命名工具_v2.0" files_renam
 
 ```
 files-rename/
-├── files_renames.py          # 主程序文件
-├── README.md                 # 项目说明
+├── src/                      # 源代码目录
+│   └── files_renames.py     # 主程序文件
+├── build/                    # 构建脚本目录
+│   ├── 一键打包.bat         # 简单打包脚本（推荐）
+│   ├── 高级打包工具.bat     # 高级打包脚本
+│   ├── 打包工具.bat         # 原始打包脚本
+│   ├── 文件重命名工具.spec  # PyInstaller配置文件
+│   └── version_info.txt      # 版本信息文件
+├── docs/                     # 文档目录
+│   └── README_打包说明.md   # 打包说明文档
+├── dist/                     # 打包输出目录
+│   └── 文件重命名工具_v2.0.exe  # 可执行文件（打包后生成）
+├── venv_python/              # 虚拟环境目录
+├── README.md                 # 项目主说明文档
 ├── LICENSE                   # MIT许可证
 ├── .gitignore               # Git忽略文件
-├── 一键打包.bat             # 简单打包脚本（推荐）
-├── 高级打包工具.bat         # 高级打包脚本
-├── 打包工具.bat             # 原始打包脚本
-├── 文件重命名工具.spec      # PyInstaller配置文件
-├── version_info.txt          # 版本信息文件
-└── dist/                     # 打包输出目录
-    └── 文件重命名工具_v2.0.exe  # 可执行文件
+├── requirements.txt          # 依赖文件
+└── build.bat                 # 快速打包脚本
 ```
 
 ## 开发信息

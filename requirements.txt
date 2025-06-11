@@ -1,0 +1,17 @@
+# 文件重命名工具依赖列表
+# 本项目仅使用Python标准库，无需额外依赖
+
+# 开发和打包依赖（可选）
+# pyinstaller>=5.0  # 用于打包可执行文件
+# pytest>=7.0       # 用于单元测试（如果需要）
+
+# 注意：本程序仅使用以下Python标准库模块：
+# - tkinter (GUI界面)
+# - os (文件系统操作)
+# - shutil (文件复制)
+# - datetime (时间戳)
+# - sys (系统相关)
+
+# 如需打包，请运行：
+# pip install pyinstaller
+# 然后使用 build/ 目录下的打包脚本
